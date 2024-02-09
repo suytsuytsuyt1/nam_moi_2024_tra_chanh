@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+      body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+    }
+    .slide-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 350px;
+    background-color: black;
+    position: relative;
+    overflow: hidden;
+
+    }
+    .slide-card-left{   
+        background-size:cover;
+        width: 280px;
+        height: 350px;
+        position: relative;
+        background-image: url(nua_1.jpg);
+        background-position-x: right;
+
+    }
+    .slide-card-rigth{
+        
+        background-size: cover;
+        width: 250px;
+        height: 350px;
+        position: relative;
+        background-image: url(nua_2.jpg);
+        background-position-x: left;;
+    }
+    .click{
+        width: 35px;
+        height: 35px;
+        background:url(click.gif);
+        background-size: cover;
+        position: absolute;
+        border-radius: 40%;
+    }
+    @media all and (max-width:600px) {
+
+        .slide-card{
+            width: 250px;
+            height: 300px;
+        }
+        
+    }
+    
+
+
+</style>
+<body>
+    <div class="slide-card">
+        <div class="slide-card-left"></div>
+        <div class="slide-card-rigth"></div>
+        <div class="click"></div>
+    </div>
+    
+</body>
+
+<script>
+    document.querySelector('.click').addEventListener('click',function(){
+        var left = document.querySelector('.slide-card-left');
+        var rigth = document.querySelector('.slide-card-rigth');
+        var click_btn = document.querySelector('.click');
+
+        left.style.transform = 'translateX(-20%)';
+        left.style.transition = 'all 2s';
+        left.style.opacity = '0';
+        
+        rigth.style.transform = 'translatex(20%)';
+        rigth.style.transition = ' all 2s';
+        rigth.style.opacity = '0';
+
+        click_btn.style.transform = 'all 2s';
+        click_btn.style.opacity = '0';
+    }
+    );
+</script>
+</html>
